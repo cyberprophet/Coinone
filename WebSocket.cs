@@ -97,10 +97,17 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
             }
             Console.WriteLine(new
             {
+                CryptoExchange = nameof(Coinone),
                 DateTime.Now,
                 Response = jToken
             });
         }
+        Console.WriteLine(new
+        {
+            CryptoExchange = nameof(Coinone),
+            DateTime.Now,
+            Socket = Socket.State
+        });
     }
 
     public override async Task ConnectAsync(string? token = null, TimeSpan? interval = null)
