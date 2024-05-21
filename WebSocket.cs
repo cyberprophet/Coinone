@@ -18,10 +18,14 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
 
     public async Task RequestPingAsync()
     {
-        await base.RequestAsync(JsonConvert.SerializeObject(new
+        while (WebSocketState.Open == Socket.State)
         {
-            request_type = "PING"
-        }));
+            await base.RequestAsync(JsonConvert.SerializeObject(new
+            {
+                request_type = "PING"
+            }));
+            await Task.Delay(TimeSpan.FromMinutes(0x10));
+        }
     }
 
     /// <summary>웹소켓 요청 방법 topic: quote_currency, target_currency 등의 정보를 JSON 형식으로 입력</summary>
@@ -91,7 +95,11 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
                     OnReceiveTicker(json);
                     continue;
             }
-            Console.WriteLine(jToken);
+            Console.WriteLine(new
+            {
+                DateTime.Now,
+                Response = jToken
+            });
         }
     }
 
