@@ -30,4 +30,8 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="ShareInvest.Crypto" Version="1.0.0.2" />
+	</ItemGroup>
+
 </Project>
