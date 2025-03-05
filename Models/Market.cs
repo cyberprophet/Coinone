@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -15,7 +16,7 @@ public class Market
     }
 
     /// <summary>종목의 심볼</summary>
-    [DataMember, JsonProperty("symbol"), JsonPropertyName("symbol")]
+    [DataMember, JsonProperty("symbol"), JsonPropertyName("symbol"), Key]
     public string? Code
     {
         get; set;
