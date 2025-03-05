@@ -5,30 +5,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<RootNamespace>ShareInvest.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<PackageId>ShareInvest.Coinone</PackageId>
 		<Authors>cyberprophet</Authors>
 		<Title>coinone</Title>
 		<Company>ShareInvest Corp.</Company>
 		<Copyright>Copyright ⓒ 2024, ShareInvest Corp.</Copyright>
 		<PackageProjectUrl>https://github.com/crypto-currency-by-exchange</PackageProjectUrl>
-		<PackageIcon>coinone.png</PackageIcon>
+		<PackageIcon></PackageIcon>
 		<PackageTags>crypto,trading,api,coinone,share</PackageTags>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageLicenseFile></PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
 		<Version>1.0.0.1</Version>
 	</PropertyGroup>
-
-	<ItemGroup>
-		<None Include="..\..\..\Pictures\Icon\coinone.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\UPbit\LICENSE.txt">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Crypto\Crypto.csproj" />
